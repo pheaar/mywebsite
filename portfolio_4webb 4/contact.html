@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<htmldj lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+      /* Add these styles to your style.css or in a <style> tag within the <head> */
+      .contact-content {
+        padding: 2rem;
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.6;
+      }
+
+      .contact-content h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: #333;
+        text-align: center;
+      }
+
+      .contact-info {
+        margin-bottom: 1.5rem;
+      }
+
+      .contact-info p {
+        font-size: 1.1rem;
+        color: #555;
+        margin-bottom: 0.5rem;
+      }
+
+      .contact-form {
+        /* Style the form as needed */
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-container">
+        <div class="logo">
+          <a href="index.html"><span>Phearath</span> THORN </a>
+        </div>
+        <ul class="nav-links">
+          <li>
+            <a href="index.html" aria-label="Go to the Home page">Home</a>
+          </li>
+          <li>
+            <a href="about.html" aria-label="Learn more About me">About</a>
+          </li>
+          <li>
+            <a href="experience.html" aria-label="See my Work Experience"
+              >Experience</a
+            >
+          </li>
+          <li><a href="contact.html" aria-label="Contact Me">Contact</a></li>
+        </ul>
+        <button id="darkModeToggle" aria-label="Toggle Dark Mode">
+          <i class="bx bx-moon"></i>
+          <!-- Moon icon (default: light mode) -->
+        </button>
+      </div>
+    </nav>
+    <nav>
+      <!-- Your navigation here (copy from index.html) -->
+    </nav>
+
+    <main>
+      <section class="contact-content">
+        <h1>Contact Me</h1>
+
+        <div class="contact-info">
+          <p>Feel free to reach out to me!</p>
+          <p>
+            Email:
+            <a href="mailto:rathphea526@gmail.com">rathphea526@gmail.com</a>
+          </p>
+          <p>Telegram:
+            <a href="https://t.me/phearath_thorn">THORN Phearath(092478397)</a>
+          </p>
+          <p>Phone:
+            <a href="">092 478 397</a>
+          </p>
+          <p>
+            LinkedIn:
+            <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" target="_blank"
+              >THORN Phearath</a
+            >
+          </p>
+          <p>
+            GitHub:
+            <a href="https://github.com/yourusername" target="_blank"
+              >pheaar</a
+            >
+          </p>
+        </div>
+
+        <form class="contact-form" action="#" method="post">
+          <label for="name">Name:</label><br />
+          <input type="text" id="name" name="name" /><br /><br />
+
+          <label for="email">Email:</label><br />
+          <input type="email" id="email" name="email" /><br /><br />
+
+          <label for="message">Message:</label><br />
+          <textarea id="message" name="message" rows="4"></textarea><br /><br />
+
+          <input type="submit" value="Submit" />
+        </form>
+      </section>
+    </main>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({ offset: 0 });
+    </script>
+      <script>
+        const darkModeToggle = document.getElementById("darkModeToggle");
+        const body = document.body;
+  
+        // Function to enable dark mode
+        function enableDarkMode() {
+          body.classList.add("dark-mode");
+          darkModeToggle.innerHTML = '<i class="bx bx-sun"></i>'; // Change to sun icon
+          localStorage.setItem("darkMode", "enabled"); // Store preference
+        }
+  
+        // Function to disable dark mode
+        function disableDarkMode() {
+          body.classList.remove("dark-mode");
+          darkModeToggle.innerHTML = '<i class="bx bx-moon"></i>'; // Change to moon icon
+          localStorage.setItem("darkMode", "disabled"); // Store preference
+        }
+  
+        // Check local storage for saved preference
+        if (localStorage.getItem("darkMode") === "enabled") {
+          enableDarkMode();
+        }
+  
+        // Add event listener to toggle button
+        darkModeToggle.addEventListener("click", () => {
+          if (body.classList.contains("dark-mode")) {
+            disableDarkMode();
+          } else {
+            enableDarkMode();
+          }
+        });
+      </script>
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+      <script>
+        AOS.init({
+          offset: 50, // Adjust offset as needed
+          duration: 800, // Shorten the default duration
+          once: true, // Only animate once
+        });
+      </script>
+  </body>
+  </html>

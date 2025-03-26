@@ -1,0 +1,528 @@
+/* ==========================================================================
+   Table of Contents:
+   --------------------------------------------------------------------------
+   1.  Resetting and General Styles
+   2.  Typography
+   3.  Navigation Styles
+   4.  Home Page Styles
+   5.  About Page Styles
+   6.  Experience Page Styles
+   7.  Contact Page Styles
+   8.  Utility Classes
+   9.  Media Queries
+   10. Dark Mode Support (Base Styles)
+   11. Accessibility Enhancements
+   12. Transitions and Animations
+   ========================================================================== */
+
+/* ==========================================================================
+   1. Resetting and General Styles
+   ========================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;600;700;900&display=swap");
+
+:root {
+  /* Color Palette */
+  --color-primary: #007bff; /* A vibrant blue */
+  --color-primary-darker: #0056b3; /* A slightly darker shade for hover/focus */
+  --color-secondary: #6c757d; /* A soft gray */
+  --color-accent: #007bff; /* A bright green */
+  --color-background: #f8f9fa; /* A light background */
+  --color-text: #343a40; /* A dark text color */
+  --color-text-light: #6c757d; /* A softer text color */
+  --color-code-background: #e9ecef; /* For code snippets */
+
+  /* Font Sizes */
+  --font-size-h1: 2.5rem;
+  --font-size-h2: 2rem;
+  --font-size-h3: 1.5rem;
+  --font-size-body: 1.1rem;
+  --font-size-small: 0.9rem;
+
+  /* Spacing */
+  --spacing-section-padding: 3rem;
+  --spacing-border-radius: 0.5rem;
+  --effect-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Reusable box-shadow */
+}
+
+/* Basic Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  line-height: 1.6;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  -webkit-font-smoothing: antialiased; /* Improve font rendering */
+  -moz-osx-font-smoothing: grayscale; /* Improve font rendering */
+}
+
+/* ==========================================================================
+      2. Typography
+      ========================================================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600; /* Stronger headings */
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+}
+
+p {
+  font-size: var(--font-size-body);
+  margin-bottom: 1rem;
+}
+
+small {
+  font-size: var(--font-size-small);
+  color: var(--color-text-light);
+}
+
+code {
+  background-color: var(--color-code-background);
+  padding: 0.2rem 0.4rem;
+  border-radius: var(--spacing-border-radius);
+  font-family: monospace;
+  font-size: var(--font-size-small);
+}
+
+/* ==========================================================================
+      3. Navigation Styles
+      ========================================================================== */
+
+nav {
+  background-color: white;
+  padding: 1rem 2rem;
+  box-shadow: var(--effect-box-shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo a {
+  font-size: 1.8rem;
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.logo a:hover {
+  color: var(--color-primary-darker);
+}
+
+.logo a span {
+  color: var(--color-accent);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.2s ease-in-out;
+  padding: 0.5rem 0; /* Add some padding for better touch targets */
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+  color: var(--color-primary);
+  transform: translateY(-2px); /* Slight upward movement on hover */
+}
+
+/* ==========================================================================
+      4. Home Page Styles
+      ========================================================================== */
+
+.home-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 5rem 2rem;
+}
+
+.home-content {
+  text-align: left;
+  max-width: 600px; /* Limit width of home content */
+}
+
+.home-content h1 {
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.home-content h4 {
+  font-size: var(--font-size-h3);
+  color: var(--color-secondary);
+  margin-bottom: 2rem;
+}
+
+.home-content p {
+  color: var(--color-text-light);
+}
+
+.profile-image img {
+  width: 300px; /* Adjust as needed */
+  border-radius: 10%;
+  box-shadow: var(--effect-box-shadow);
+  transition: transform 0.3s ease; /* Add transition for hover effect */
+}
+
+.profile-image img:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* ==========================================================================
+      5. About Page Styles
+      ========================================================================== */
+
+.about-content {
+  padding: 2rem;
+  line-height: 1.6;
+  background-color: white;
+  border-radius: var(--spacing-border-radius);
+  box-shadow: var(--effect-box-shadow);
+}
+
+.about-content h1 {
+  color: var(--color-primary);
+  text-align: center;
+}
+
+.about-content p {
+  color: var(--color-text-light);
+}
+
+.highlight {
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+/* ==========================================================================
+      6. Experience Page Styles
+      ========================================================================== */
+
+.experience-content {
+  padding: 2rem;
+  line-height: 1.6;
+  background-color: white;
+  border-radius: var(--spacing-border-radius);
+  box-shadow: var(--effect-box-shadow);
+}
+
+.experience-content h1 {
+  color: var(--color-primary);
+  text-align: center;
+}
+
+.experience-item {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.experience-item h3 {
+  color: var(--color-accent);
+  margin-bottom: 0.5rem;
+}
+
+.experience-item p {
+  color: var(--color-text-light);
+}
+
+.experience-item ul {
+  list-style: square;
+  padding-left: 2rem;
+  color: var(--color-text-light);
+}
+
+/* ==========================================================================
+      7. Contact Page Styles
+      ========================================================================== */
+
+.contact-content {
+  padding: 2rem;
+  line-height: 1.6;
+  background-color: white;
+  border-radius: var(--spacing-border-radius);
+  box-shadow: var(--effect-box-shadow);
+}
+
+.contact-content h1 {
+  color: var(--color-primary);
+  text-align: center;
+}
+
+.contact-info {
+  margin-bottom: 1.5rem;
+}
+
+.contact-info p {
+  color: var(--color-text-light);
+  margin-bottom: 0.5rem;
+}
+
+.contact-info a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover,
+.contact-info a:focus {
+  color: var(--color-accent);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form label {
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.75rem;
+  border: 1px solid #ced4da;
+  border-radius: var(--spacing-border-radius);
+  font-size: var(--font-size-body);
+  font-family: inherit; /* Inherit font from body */
+  transition: border-color 0.3s ease; /* Smooth border color transition */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none; /* Remove default outline */
+  border-color: var(--color-primary); /* Highlight the border on focus */
+}
+
+.contact-form textarea {
+  resize: vertical; /* Allow vertical resizing */
+}
+
+.contact-form input[type="submit"] {
+  background-color: var(--color-primary);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+  border: none; /* Remove default button border */
+  padding: 0.75rem 1.5rem; /* Ensure consistent padding */
+}
+
+.contact-form input[type="submit"]:hover,
+.contact-form input[type="submit"]:focus {
+  background-color: var(--color-primary-darker); /* Darker shade on hover */
+  transform: translateY(-2px); /* Slight upward movement on hover */
+  outline: none; /* Ensure no outline on focus */
+}
+
+/* ==========================================================================
+      8. Utility Classes
+      ========================================================================== */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-primary);
+  color: white;
+  text-decoration: none;
+  border-radius: var(--spacing-border-radius);
+  transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: var(--color-primary-darker);
+  transform: translateY(-2px); /* Slight upward movement on hover */
+  outline: none; /* Ensure no outline on focus */
+}
+
+/* ==========================================================================
+      9. Media Queries
+      ========================================================================== */
+
+@media (max-width: 768px) {
+  /* Smaller screens (phones and tablets) */
+
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    margin-top: 1rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .home-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-image img {
+    width: 200px; /* Smaller image on smaller screens */
+  }
+
+  .home-content {
+    text-align: center;
+    max-width: 100%; /* Take up full width on smaller screens */
+  }
+
+  .home-content h1 {
+    font-size: 2rem; /* Slightly smaller heading on smaller screens */
+  }
+
+  .home-content h4 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (min-width: 992px) {
+  /* Desktops and larger screens */
+
+  .container {
+    padding: 0 3rem; /* Slightly wider padding on larger screens */
+  }
+}
+
+/* ==========================================================================
+      10. Dark Mode Support (Base Styles)
+      ========================================================================== */
+
+body.dark-mode {
+  --color-background: #222;
+  --color-text: #eee;
+  --color-text-light: #bbb;
+  --color-primary: #5bc0de;
+  --color-primary-darker: #46a3be;
+  --color-secondary: #888;
+  --color-code-background: #333;
+}
+
+body.dark-mode nav {
+  background-color: #333;
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .about-content,
+body.dark-mode .experience-content,
+body.dark-mode .contact-content {
+  background-color: #333;
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+}
+
+/* ==========================================================================
+      11. Accessibility Enhancements
+      ========================================================================== */
+
+/* Skip to content link (hidden by default) */
+.skip-to-content {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #f0f0f0;
+  color: #333;
+  padding: 0.5rem 1rem;
+  z-index: 1000;
+  transition: top 0.3s ease;
+}
+
+.skip-to-content:focus {
+  top: 0; /* Show when focused */
+}
+
+/* Add focus styles to interactive elements */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px; /* Optional: Add some space between the outline and the element */
+}
+
+/* ==========================================================================
+      12. Transitions and Animations (Dark Mode Icon Transition)
+      ========================================================================== */
+
+/* Smooth scrolling on internal links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Example animation with AOS */
+[data-aos] {
+  transition: all 0.5s ease-in-out; /* Apply a smooth transition to all AOS elements */
+}
+
+/* Style the Dark Mode Toggle Button */
+nav {
+  position: relative;
+}
+#darkModeToggle {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#darkModeToggle i {
+  transition: transform 0.3s ease-in-out; /* Animate the icon */
+  font-size: 1.5rem; /* Adjust the icon size */
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+#darkModeToggle i.bx-sun {
+  /*  Use a sun icon for light mode */
+  transform: rotate(360deg);
+}

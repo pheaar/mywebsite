@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<htmkkl lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Me</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+      /* Add these styles to your style.css or in a <style> tag within the <head> */
+      .about-content {
+        padding: 2rem;
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.6;
+      }
+
+      .about-content h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: #333;
+        text-align: center;
+      }
+
+      .about-content p {
+        font-size: 1.1rem;
+        color: #555;
+      }
+      .highlight {
+        color: #007bff; /* A visually appealing color */
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <a href="#main-content" class="skip-to-content">Skip to Content</a>
+
+    <nav>
+      <div class="nav-container">
+        <div class="logo">
+          <a href="index.html"><span>Phearath</span> THORN </a>
+        </div>
+        <ul class="nav-links">
+          <li>
+            <a href="index.html" aria-label="Go to the Home page">Home</a>
+          </li>
+          <li>
+            <a href="about.html" aria-label="Learn more About me">About</a>
+          </li>
+          <li>
+            <a href="experience.html" aria-label="See my Work Experience"
+              >Experience</a
+            >
+          </li>
+          <li><a href="contact.html" aria-label="Contact Me">Contact</a></li>
+        </ul>
+        <button id="darkModeToggle" aria-label="Toggle Dark Mode">
+          <i class="bx bx-moon"></i>
+          <!-- Moon icon (default: light mode) -->
+        </button>
+      </div>
+    </nav>
+
+   
+    <script>
+      const darkModeToggle = document.getElementById("darkModeToggle");
+      const body = document.body;
+
+      // Function to enable dark mode
+      function enableDarkMode() {
+        body.classList.add("dark-mode");
+        darkModeToggle.innerHTML = '<i class="bx bx-sun"></i>'; // Change to sun icon
+        localStorage.setItem("darkMode", "enabled"); // Store preference
+      }
+
+      // Function to disable dark mode
+      function disableDarkMode() {
+        body.classList.remove("dark-mode");
+        darkModeToggle.innerHTML = '<i class="bx bx-moon"></i>'; // Change to moon icon
+        localStorage.setItem("darkMode", "disabled"); // Store preference
+      }
+
+      // Check local storage for saved preference
+      if (localStorage.getItem("darkMode") === "enabled") {
+        enableDarkMode();
+      }
+
+      // Add event listener to toggle button
+      darkModeToggle.addEventListener("click", () => {
+        if (body.classList.contains("dark-mode")) {
+          disableDarkMode();
+        } else {
+          enableDarkMode();
+        }
+      });
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        offset: 50, // Adjust offset as needed
+        duration: 800, // Shorten the default duration
+        once: true, // Only animate once
+      });
+    </script>
+    
+          <nav>
+      <!-- Your navigation here (copy from index.html) -->
+    </nav>
+
+    <main>
+      <section class="about-content">
+        <h1>About Me</h1>
+        <p>
+          Hello! I'm Thorn Phearath, a highly motivated and aspiring IT
+          professional with a strong passion for problem-solving and a desire to
+          contribute to innovative technology solutions. I'm eager to embark on
+          my first role in the industry and bring my skills and enthusiasm to a
+          challenging and rewarding environment.
+        </p>
+
+        <p>
+          From a young age, I've been fascinated by the power of technology to
+          connect people and solve complex challenges. This fascination led me
+          to pursue studies in IT, where I gained a solid foundation in
+          <span class="highlight">IT Support, Networking, and Programming</span
+          >. I'm a quick learner, and I'm always eager to expand my knowledge
+          and stay up-to-date with the latest trends in the tech world.
+        </p>
+
+        <p>
+          I'm a firm believer in teamwork and communication. I thrive in
+          collaborative environments where I can share ideas, learn from others,
+          and contribute to a shared goal. I'm confident in my ability to adapt
+          to new situations, learn quickly, and contribute meaningfully to your
+          team. I'm excited about the opportunity to apply my skills and
+          dedication to help your company achieve its goals.
+        </p>
+
+        <p>
+          I'm seeking a role where I can make a real impact and contribute to
+          the success of a forward-thinking organization. If you're looking for
+          a passionate and dedicated individual with a strong work ethic, I
+          would love to connect and discuss how I can contribute to your team.
+        </p>
+      </section>
+    </main>
+
+    
+    
+
+  </body>
+</html>
